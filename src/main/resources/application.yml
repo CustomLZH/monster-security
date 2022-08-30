@@ -1,0 +1,28 @@
+server:
+  port: 9803 # 服务端口
+  servlet:
+    context-path: /
+# 应用名称
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration,org.springframework.boot.actuate.autoconfigure.security.servlet.ManagementWebSecurityAutoConfiguration
+  application:
+    name: monster-security
+  datasource:
+    # 数据库驱动：
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 数据源名称
+    name: defaultDataSource
+    # 数据库连接地址
+    url: jdbc:mysql://localhost:3306/monster_security?serverTimezone=UTC
+    # 数据库用户名&密码：
+    username: root
+    password: root
+eureka:
+  client:
+    service-url:
+      # eureka的地址信息（因为eureka也是一个微服务，也要注册到注册中心里）
+      defaultZone: http://localhost:9801/eureka
+  instance:
+    prefer-ip-address: true
+
