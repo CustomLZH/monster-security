@@ -27,4 +27,8 @@ eureka:
     fetch-registry: false
   instance:
     prefer-ip-address: true
-
+generate:
+  # 包模块位置
+  packageModulePath: src/main/java
+  # 类路径
+  classPackagePath: com/monster/security/core/bean/entity
