@@ -23,7 +23,6 @@ eureka:
     service-url:
       # eureka的地址信息（因为eureka也是一个微服务，也要注册到注册中心里）
       defaultZone: http://localhost:9801/eureka
-    register-with-eureka: false
     fetch-registry: false
   instance:
     prefer-ip-address: true
