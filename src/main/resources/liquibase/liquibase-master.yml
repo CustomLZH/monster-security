@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - changeSet:
+      author: system
+      id: 01_init_202210200217
+      sqlFile:
+        path: database/mysql/01_init_202210200217.sql
+        relativeToChangelogFile: true
