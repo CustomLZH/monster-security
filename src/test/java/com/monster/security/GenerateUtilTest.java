@@ -40,6 +40,8 @@ public class GenerateUtilTest {
         // 表名称对应实体类名称
         Map<String, String> names = new HashMap<>();
         names.put("t_security_user", "SecurityUser");
+        names.put("t_enumerate_type", "EnumerateType");
+        names.put("t_enumerate_data", "EnumerateData");
         // 项目存放位置
         String projectPath = new File("").getCanonicalPath();
         // 生成实体类

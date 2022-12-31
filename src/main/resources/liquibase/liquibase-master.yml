@@ -4,4 +4,12 @@ databaseChangeLog:
       id: 01_init_202210200217
       sqlFile:
         path: database/mysql/01_init_202210200217.sql
+        # 文件路径是相对于根changelog
+        relativeToChangelogFile: true
+  - changeSet:
+      author: system
+      id: 02_ddl_202212291900
+      sqlFile:
+        path: database/mysql/02_ddl_202212291900.sql
+        # 文件路径是相对于根changelog
         relativeToChangelogFile: true
