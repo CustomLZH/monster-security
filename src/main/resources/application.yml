@@ -1,11 +1,11 @@
 server:
   port: 9803 # 服务端口
   servlet:
-    context-path: /
+    context-path: /${spring.application.name}
 # 应用名称
 spring:
   autoconfigure:
-    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration,org.springframework.boot.actuate.autoconfigure.security.servlet.ManagementWebSecurityAutoConfiguration
+    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
   application:
     name: monster-security
   datasource:
@@ -24,6 +24,7 @@ eureka:
     service-url:
       # eureka的地址信息（因为eureka也是一个微服务，也要注册到注册中心里）
       defaultZone: http://localhost:9801/eureka
+    enabled: false
   instance:
     prefer-ip-address: true
 
