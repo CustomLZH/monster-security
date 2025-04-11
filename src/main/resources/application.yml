@@ -1,7 +1,7 @@
 server:
   port: 9803 # 服务端口
   servlet:
-    context-path: /${spring.application.name}
+    context-path: /
 # 应用名称
 spring:
   autoconfigure:
@@ -24,7 +24,25 @@ eureka:
     service-url:
       # eureka的地址信息（因为eureka也是一个微服务，也要注册到注册中心里）
       defaultZone: http://localhost:9801/eureka
-    enabled: false
   instance:
     prefer-ip-address: true
 
+mybatis-plus:
+  # 配置 Mapper 扫描路径
+  mapper-locations: classpath:mapper/**/*.xml
+  # 实体类所在包（用于别名配置）
+  type-aliases-package: com.monster.security.core.bean
+  configuration:
+    # 开启驼峰命名映射
+    map-underscore-to-camel-case: true
+    # 日志输出（开发环境开启）
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      # 全局主键策略（默认雪花算法）
+      id-type: ASSIGN_ID
+      # 逻辑删除字段名（可选）
+      logic-delete-field: deleted
+      # 逻辑删除值（1=删除，0=未删除）
+      logic-delete-value: 1
+      logic-not-delete-value: 0

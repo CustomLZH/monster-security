@@ -1,5 +1,8 @@
 package com.monster.security.core.controller;
 
+import com.monster.commons.annotation.enums.EnableDictTranslate;
+import com.monster.commons.beans.ResponseData;
+import com.monster.security.core.bean.User;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,8 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @RequestMapping("test")
-    public String test() {
-        return "xxx";
+    @EnableDictTranslate
+    public ResponseData<User> test() {
+        User user = new User();
+        user.setUserName("admin");
+        user.setUserType(1);
+        return ResponseData.succeed(user);
     }
 
 }

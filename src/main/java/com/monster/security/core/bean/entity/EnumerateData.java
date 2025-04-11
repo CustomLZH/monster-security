@@ -1,9 +1,6 @@
 package com.monster.security.core.bean.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 import java.util.Date;
 import java.io.Serializable;
@@ -18,7 +15,7 @@ public class EnumerateData implements Serializable {
 	/**
 	 * 编号
 	 */
-	@TableField(value = "i_id")
+	@TableId(value = "i_id", type = IdType.ASSIGN_ID)
 	private Long id;
 
 	/**
@@ -48,37 +45,37 @@ public class EnumerateData implements Serializable {
 	/**
 	 * 创建人id
 	 */
-	@TableField(value = "i_create_id")
+	@TableField(value = "i_create_id", fill = FieldFill.INSERT)
 	private Long createId;
 
 	/**
 	 * 创建人姓名
 	 */
-	@TableField(value = "s_create_name")
+	@TableField(value = "s_create_name", fill = FieldFill.INSERT)
 	private String createName;
 
 	/**
 	 * 创建时间
 	 */
-	@TableField(value = "d_create_date")
+	@TableField(value = "d_create_date", fill = FieldFill.INSERT)
 	private Date createDate;
 
 	/**
 	 * 更新人id
 	 */
-	@TableField(value = "i_update_id")
+	@TableField(value = "i_update_id", fill = FieldFill.INSERT_UPDATE)
 	private Long updateId;
 
 	/**
 	 * 更新人姓名
 	 */
-	@TableField(value = "s_update_name")
+	@TableField(value = "s_update_name", fill = FieldFill.INSERT_UPDATE)
 	private String updateName;
 
 	/**
 	 * 更新时间
 	 */
-	@TableField(value = "d_update_date")
+	@TableField(value = "d_update_date", fill = FieldFill.INSERT_UPDATE)
 	private Date updateDate;
 
 }
